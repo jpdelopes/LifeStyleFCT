@@ -1,0 +1,119 @@
+/* GRID * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 4fr 1fr 4fr 2fr;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "main"
+      "login"
+      "social"
+      "about";
+}
+
+.grid > * {
+  background: #dddddd;
+}
+/* PAGE ELEMENTS  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+body {
+    margin: 0;
+}
+
+.logo{
+  grid-area: logo;
+  padding: 5% 10% 5% 10%;
+}
+
+.logo a img{
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+.menu{
+  grid-area: menu;
+  background: #ffffff;
+  align-self: center;
+}
+.login{
+  grid-area:login;
+  margin: auto;
+  align-self: center;
+}
+.main{
+  grid-area: main;
+}
+
+.social{
+  grid-area: social;
+  background: green;
+}
+
+.about{
+  grid-area: about;
+}
+
+nav ul {
+  list-style: none;
+
+  display: flex;
+  justify-content:space-around;
+  margin: 0;
+  padding: 0;
+}  nav ul {
+
+  }
+
+nav a {
+  color: #888888;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #00B0B9;
+}
+
+/* Lettering * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+h2  {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    align-items: flex-end;
+    color: #00B0B9;
+    text-align: center;
+}
+
+ /*D3.JS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr 3fr;
+    grid-template-rows: 1fr 4fr 4fr 2fr;
+    grid-template-areas:
+      "logo menu login social"
+      "main main main social"
+      "main main main social"
+      "about about about about";
+  }
+  .menu{
+    grid-area: menu;
+    background-color: #555555;
+    align-self: center;
+  }
+}
